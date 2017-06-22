@@ -47,11 +47,17 @@
             margin: auto;
             padding: 0;
         }
+        @media screen and (max-width: 414px) {
+            .title, #qrcode, .highlight{
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
-  <h1>{{pkg.name}}@{{pkg.version}}</h1>
-  <div id="__react-content"></div>
+  <h1 class="title">{{pkg.name}}@{{pkg.version}}</h1>
+  <div id="__root-content">
+  </div>
   {{{content}}}
   <script>FastClick.attach(document.body);</script>
   <script src="./{{name}}.js"></script>
